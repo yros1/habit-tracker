@@ -36,5 +36,9 @@ headers = {
     "X-USER-TOKEN": os.environ.get("PIXELA_API_TOKEN")
 }
 
-response = requests.post(url=graph_endpoint, json=graph_parameters, headers=headers)
-print(response.text)
+# response = requests.post(url=graph_endpoint, json=graph_parameters, headers=headers)
+# print(response.text)
+
+# 3. Get the graph!
+# Browse https://pixe.la/v1/users/a-know/graphs/test-graph! This is also the /v1/users/<username>/graphs/<graphID> API.
+# In my case https://pixe.la/v1/users/yros1/graphs/coding-graph-1
