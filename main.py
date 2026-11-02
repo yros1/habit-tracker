@@ -1,3 +1,5 @@
+# Uncomment the following response/request lines to run the code. Make sure to set the environment variables in your .env file.
+
 import os
 from time import process_time
 
