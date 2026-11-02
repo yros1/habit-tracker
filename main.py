@@ -76,5 +76,5 @@ pixel_update_parameters = {
 # DELETE /v1/users/<username>/graphs/<graphID>/<yyyyMMdd>
 pixel_delete_endpoint = f"{pixel_creation_endpoint}/{today.strftime('%Y%m%d')}"
 
-response = requests.delete(url=pixel_delete_endpoint, headers=headers)
-print(response.text)
+# response = requests.delete(url=pixel_delete_endpoint, headers=headers)
+# print(response.text)
