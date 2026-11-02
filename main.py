@@ -1,4 +1,5 @@
 import os
+from time import process_time
 
 import requests_cache
 import requests
@@ -58,3 +59,15 @@ pixel_creation_parameters = {
 
 # response = requests.post(url=pixel_creation_endpoint, json=pixel_creation_parameters, headers=headers)
 # print(response.text)
+
+#5. Update value on the graph.
+# PUT /v1/users/<username>/graphs/<graphID>/<yyyyMMdd>
+pixel_update_endpoint = f"{pixel_creation_endpoint}/{today.strftime('%Y%m%d')}"
+
+pixel_update_parameters = {
+    "quantity": "30",
+    "optionalData": "{\"comment\": \"Updated coding time for today.\"}"
+}
+
+response = requests.put(url=pixel_update_endpoint, json=pixel_update_parameters, headers=headers)
+print(response.text)
