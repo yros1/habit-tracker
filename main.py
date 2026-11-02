@@ -3,7 +3,7 @@ import os
 import requests_cache
 import requests
 from dotenv import load_dotenv
-from datetime import timedelta
+from datetime import datetime
 
 load_dotenv()
 
@@ -42,3 +42,19 @@ headers = {
 # 3. Get the graph!
 # Browse https://pixe.la/v1/users/a-know/graphs/test-graph! This is also the /v1/users/<username>/graphs/<graphID> API.
 # In my case https://pixe.la/v1/users/yros1/graphs/coding-graph-1
+
+#4. Post pixel value to the graph.
+# /v1/users/<username>/graphs/<graphID>
+pixel_creation_endpoint = f"{graph_endpoint}/{os.environ.get('PIXELA_GRAPH_ID')}"
+
+today = datetime.now()
+# print(today.strftime("%Y%m%d"))
+
+pixel_creation_parameters = {
+    "date": f"{today.strftime('%Y%m%d')}",
+    "quantity": "120",
+    "optionalData": "{\"comment\": \"Coding time for today.\"}"
+}
+
+# response = requests.post(url=pixel_creation_endpoint, json=pixel_creation_parameters, headers=headers)
+# print(response.text)
